@@ -1,5 +1,6 @@
 package com.mauricionaula.consultaapi.controllers
 
+import com.mauricionaula.consultaapi.model.consultaMedicaTabla
 import com.mauricionaula.consultaapi.model.pacienteTabla
 import com.mauricionaula.consultaapi.service.pacienteService
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,6 +26,11 @@ class pacienteController {
     @PutMapping
     fun update (@RequestBody pacienteTabla: pacienteTabla):pacienteTabla{
         return pacienteService.update(pacienteTabla)
+    }
+
+    @PatchMapping
+    fun patch(@RequestBody pacienteTabla: pacienteTabla): pacienteTabla {
+        return pacienteService.updateWeight(pacienteTabla)
     }
 
     @DeleteMapping("/delete/{id}")

@@ -27,6 +27,11 @@ class consultaMedicaController {
         return consultaMedicaService.update(consultaMedicaTabla)
     }
 
+    @PatchMapping
+    fun patch(@RequestBody consultaMedicaTabla: consultaMedicaTabla):consultaMedicaTabla{
+        return consultaMedicaService.updateWeight(consultaMedicaTabla)
+    }
+
     @DeleteMapping("/delete/{id}")
     fun delete (@PathVariable("id") id: Long):Boolean{
         return consultaMedicaService.delete(id)
