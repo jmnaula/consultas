@@ -2,10 +2,7 @@ package com.mauricionaula.consultaapi.controllers
 
 import com.mauricionaula.consultaapi.model.consultaMedicaTabla
 import com.mauricionaula.consultaapi.model.medicoTabla
-import com.mauricionaula.consultaapi.model.tratamientoTabla
-import com.mauricionaula.consultaapi.service.consultaMedicaService
 import com.mauricionaula.consultaapi.service.medicoService
-import com.mauricionaula.consultaapi.service.tratamientoService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
@@ -29,6 +26,11 @@ class medicoController {
     @PutMapping
     fun update (@RequestBody medicoTabla: medicoTabla):medicoTabla{
         return medicoService.update(medicoTabla)
+    }
+
+    @PatchMapping
+    fun patch(@RequestBody medicoTabla: medicoTabla): medicoTabla {
+        return medicoService.updateWeight(medicoTabla)
     }
 
     @DeleteMapping("/delete/{id}")

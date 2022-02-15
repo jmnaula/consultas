@@ -8,7 +8,8 @@ class medicoTabla {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(updatable = false)
-    var nombres: Long? = null
+    var id: Long? = null
+    var nombres: String? = null
     var especialidad: String? = null
 
 }
